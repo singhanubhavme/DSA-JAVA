@@ -1,4 +1,4 @@
-*.class
 .vscode/
-tempCodeRunnerFile.java
 Practice/
+tempCodeRunnerFile.java
+*.class
