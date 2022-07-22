@@ -23,6 +23,32 @@ public class QuickSort {
         }
     }
 
+    static int partitionNaive(int[] arr, int s, int e) { // Naive Partition
+        int pivot = s;
+        int[] temp = new int[e - s + 1];
+        int k = 0;
+        for (int i = s; i <= e; i++) {
+            if (arr[i] < arr[pivot]) {
+                temp[k++] = arr[i];
+            }
+        }
+        int part = s + k;
+        for (int i = s; i <= e; i++) {
+            if (arr[i] == arr[pivot]) {
+                temp[k++] = arr[i];
+            }
+        }
+        for (int i = s; i <= e; i++) {
+            if (arr[i] > arr[pivot]) {
+                temp[k++] = arr[i];
+            }
+        }
+        for (int i = s; i <= e; i++) {
+            arr[i] = temp[i - s];
+        }
+        return part;
+    }
+
     static void sort(int arr[], int l, int h) {
         if (l < h) {
             int p = partition(arr, l, h);
