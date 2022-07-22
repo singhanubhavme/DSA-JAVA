@@ -7,7 +7,7 @@ public class MoveNegativesToOneSide {
         arr[j] = temp;
     }
 
-    static int[] moveElements(int[] arr) {
+    static int[] moveElements(int[] arr) { // check for all cases
         int low = 0, high = arr.length - 1;
         while (low <= high) {
             if (arr[low] < 0) {
